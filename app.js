@@ -6,7 +6,13 @@
 //      "abcdefg" -> ['ab', 'cd', 'ef', 'g_']
 
 function splitString(str) {
-  // 實作寫在這裡
+  let list = [...str];
+  let result = [];
+  while (list.length > 0) {
+      result.push(list.splice(0, 2).join('').padEnd(2, '_'));
+  }
+
+  return result;
 }
 
 console.log(splitString("abcdef")) // ["ab", "cd", "ef"]
